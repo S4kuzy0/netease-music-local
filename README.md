@@ -124,6 +124,7 @@ flowchart TB
 - [Quick Start](#quick-start)
 - [账户模型与安全分享](#账户模型与安全分享)
 - [项目起点](#项目起点)
+- [版本沿革与上游关系](#版本沿革与上游关系)
 - [从推荐列表到每日策展](#从推荐列表到每日策展)
 - [当前已实现](#当前已实现)
 - [网易云登录与自动持久化](#网易云登录与自动持久化)
@@ -157,6 +158,23 @@ flowchart TB
 用户不需要先掌握流派知识。有时只需要说：
 
 > 从我今天的日推里，做一张适合晚上散步的歌单。不要太悲伤，要有完整的情绪走向。
+
+## 版本沿革与上游关系
+
+本项目派生自 [Vael-KY/netease-music-mcp](https://github.com/Vael-KY/netease-music-mcp)，
+感谢原项目提供的起点，并持续保留原项目 attribution。在此基础上，本项目自 2026 年 7 月起
+围绕私人音乐上下文、策展工作流和可靠账户写入独立演进。
+
+- 2026-07-15 — commit
+  [`e133b051`](https://github.com/Rainlxyl/netease-music-mcp-safe/commit/e133b051a38d7bbb5dab23317f6956c9101647d1)：
+  加入歌曲详情、真实近期播放事件及时间戳语义、完整歌单曲序重排等能力。
+- 2026-07-28 — commit
+  [`1e3da513`](https://github.com/Rainlxyl/netease-music-mcp-safe/commit/1e3da5131f3ac6149e8fbe285cc215005e96a05e)：
+  加入 timezone-aware listening context 与 `create_curated_playlist`；工作流会在创建后读取
+  实际歌单状态，在必要时恢复调用方指定的精确曲序，并再次核验最终元数据与歌曲顺序。
+- 后续 upstream 也加入了一些功能上重合的通用音乐工具。两个项目目前独立演进；本项目重点
+  仍是 listening context、curation workflow、timezone semantics、OAuth、idempotent/audited
+  writes、podcasts 和 post-write verification。
 
 ## 从推荐列表到每日策展
 

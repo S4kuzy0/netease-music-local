@@ -70,6 +70,14 @@
 - 既有 `README.md` 未提交 attribution 修改是在其当前工作区版本上合并保留；3 份 `CODEX_FOR_OSS_*` 未跟踪文档未删除、未移动、未纳入本次实现。
 - 下一步：Rain 审阅本地 commit 后，再单独决定是否 push 与部署。
 
+## 2026-09-29 Git housekeeping closeout
+
+- README 的 upstream/version attribution 已由本地 Git 对象核实：`e133b051a38d`（2026-07-15）与 `1e3da5131f3a`（2026-07-28）均存在，日期与所述功能演进一致；本轮将 README 与本节作为独立 docs checkpoint 收口。
+- 3 份 `CODEX_FOR_OSS_*` 文档仍保持 untracked。它们包含申请草稿、证据账本和 readiness 审计，是否保留进公开 Git 历史属于 Rain 的申请与公开意图决定；本轮不提交、不删除、不移动。
+- 本轮没有重验产品代码、真实网易云账户、OAuth、Zeabur deployment/runtime，也没有 push。此前验证结果继续按其原日期作为历史证据，不升级为当前线上验收。
+
+以下 2026-08-31 内容保留为当时工作区快照；其中 README “仍 dirty / 尚未提交”的描述已被本节取代。
+
 ## 2026-08-31 continuity refresh
 
 - continuity closeout 前的 source baseline：`main` at `6726a1e2b41d`；除本文件外，`README.md` modified，3 份 `CODEX_FOR_OSS_*` Markdown untracked，0 staged。doc-only closeout 后以 Git 当前 HEAD 为准，这四份 active docs 必须继续 dirty。
