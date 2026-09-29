@@ -73,7 +73,7 @@
 ## 2026-09-29 Git housekeeping closeout
 
 - README 的 upstream/version attribution 已由本地 Git 对象核实：`e133b051a38d`（2026-07-15）与 `1e3da5131f3a`（2026-07-28）均存在，日期与所述功能演进一致；本轮将 README 与本节作为独立 docs checkpoint 收口。
-- 3 份 `CODEX_FOR_OSS_*` 文档仍保持 untracked。它们包含申请草稿、证据账本和 readiness 审计，是否保留进公开 Git 历史属于 Rain 的申请与公开意图决定；本轮不提交、不删除、不移动。
+- Rain 已决定将 3 份 `CODEX_FOR_OSS_*` 文档作为本地申请材料保留，并暂不纳入公开 Git 历史。它们继续保持 untracked；本轮不提交、不删除、不移动，也不添加 `.gitignore` 规则。
 - 本轮没有重验产品代码、真实网易云账户、OAuth、Zeabur deployment/runtime，也没有 push。此前验证结果继续按其原日期作为历史证据，不升级为当前线上验收。
 
 以下 2026-08-31 内容保留为当时工作区快照；其中 README “仍 dirty / 尚未提交”的描述已被本节取代。
