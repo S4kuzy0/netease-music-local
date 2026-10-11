@@ -10,7 +10,7 @@ account writes.
 调用模型读取音乐上下文、解释选择，并把确认后的策展结果安全地写回个人账户。
 
 **一眼看懂：** **16 music read tools + 4 session tools + 12 write tools** · 日推 / 播放排行 /
-近期播放 · 每日策展工作流 · 播客读取 · OAuth 2.1 + PKCE · 自动登录态管理 · **102 项测试**
+近期播放 · 每日策展工作流 · 播客读取 · OAuth 2.1 + PKCE · 自动登录态管理 · **124 项测试**
 
 **项目身份：** 这是一个个人维护的独立开源项目，派生自
 [Vael-KY/netease-music-mcp](https://github.com/Vael-KY/netease-music-mcp)，依据 MIT License
