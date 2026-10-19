@@ -28,6 +28,8 @@ Missing songs retain their original positions with `found=false`; they are also 
 
 Callers should save one snapshot, report selected/found/missing counts, and avoid combining pages with different snapshot IDs. Recommendation interpretation belongs to the calling assistant; the MCP does not claim to have listened to audio or independently classified every track.
 
+Playlist lookup requests only one embedded track while retaining the full `trackIds` list. Song metadata is then fetched for the requested page. This keeps large liked libraries below the bounded response reader's limit. Incomplete ID lists still fail explicitly.
+
 ## Local access and data
 
 The stdio tool catalog exposes music reads and login tools. Account mutation and logout tools are not exposed. The transient web listener binds only to loopback, accepts matching Host/Origin values, and serves only the original temporary login routes. Login URLs have high-entropy short-lived identifiers, and request paths are not logged.
@@ -35,6 +37,8 @@ The stdio tool catalog exposes music reads and login tools. Account mutation and
 `.local/session.sqlite3` contains sensitive login state. Keep the database and its backups local. Raw library exports, real environment configuration, logs and dependency directories are ignored by Git. The SQLite facade uses short independent transactions; the adapter refreshes its session cache before each tool invocation so another local MCP process's persisted login is observed. Do not run concurrent account-writing deployments against this database.
 
 If uninstalling, remove the `netease-music-local` MCP configuration first. Preserve a backup of `.local` if the login is still needed. No Windows startup task, global player setting or external hosted service is installed.
+
+An existing locally saved NetEase session can also be migrated with the user's authorization. Verify it against the fixed `https://music.163.com/api/nuser/account/get` endpoint and check the expected account before storing the normalized session through `SessionManager.save`. Back up an existing SQLite database with SQLite's backup API first. Never pass cookie contents as MCP arguments, command-line text, or log output. No cookie import tool is exposed to the model; login status and library reads work normally after the local migration. Reuse does not extend the upstream session's lifetime.
 
 ## Verify
 

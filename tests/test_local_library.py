@@ -3,6 +3,7 @@
 import unittest
 import tempfile
 import time
+from urllib.parse import parse_qs, urlparse
 from pathlib import Path
 from unittest import mock
 
@@ -16,6 +17,15 @@ def song(song_id):
 
 
 class LibraryTests(unittest.TestCase):
+    def test_playlist_lookup_bounds_embedded_tracks_without_losing_full_ids(self):
+        ids = list(range(1, 4269))
+        playlist = {"trackCount": len(ids), "trackIds": [{"id": i} for i in ids]}
+        with mock.patch.object(library.upstream, "netease_request", return_value={"code": 200, "playlist": playlist}) as request:
+            result = library.upstream._playlist_detail(4)
+        query = parse_qs(urlparse(request.call_args.args[0]).query)
+        self.assertEqual(query["n"], ["1"])
+        self.assertEqual(library.upstream._playlist_track_ids(result), (ids, len(ids)))
+
     def test_loopback_login_loads_official_challenge_over_https(self):
         login_id = "synthetic-login-attempt-1234"
         attempt = {"created_monotonic": time.monotonic(), "qr_payload": "https://music.163.com/test"}

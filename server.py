@@ -1664,8 +1664,10 @@ def _milliseconds_to_iso8601(value: Any) -> str | None:
 
 
 def _playlist_detail(playlist_id: int) -> dict[str, Any]:
+    # Full trackIds are independent of n. Fetch details only for the selected page
+    # afterwards, so a large library cannot exhaust the bounded response reader.
     response = netease_request(
-        f"https://music.163.com/api/v6/playlist/detail?id={playlist_id}&n=100000&s=0"
+        f"https://music.163.com/api/v6/playlist/detail?id={playlist_id}&n=1&s=0"
     )
     _raise_for_upstream_code(response, "Playlist lookup failed.")
     playlist = response.get("playlist")
