@@ -23,3 +23,8 @@
 - Current recommendation phase: the native MCP completed fresh full-library exclusion for ten new selections. Five were originally released within the last year and five use pre-2006 recordings. All candidate artist IDs were absent from the full metadata export, whose complete ordered IDs still matched the fresh live playlist. Dates and versions were checked against external release sources; this is not an audio-review claim.
 - A direct DSH headless consultation was attempted but did not obtain a model answer because its official API route lacked credentials. The other assistant's actual project scripts and non-secret exports supplied the verified reading-route evidence instead. A follow-up question is being left in the shared handoff.
 - Session DB, raw user library exports, logs, credentials, local configuration and backups must remain outside version control.
+
+
+## 2026-10-19 公开整理
+
+User authorized public repository preparation. README now prioritizes the local stdio adapter and explicitly distinguishes inherited hosted/write features; README.upstream.md preserves the prior document and upstream attribution. Existing MIT notices are retained. Ignored work/dist/build directories keep local test output out of Git. All 132 existing tests passed against isolated/synthetic state using the existing local Python environment. No live account, login or playlist mutation was performed. CI uses public direct dependencies and synthetic tests.

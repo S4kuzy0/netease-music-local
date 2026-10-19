@@ -28,6 +28,9 @@ data/
 
 # Local login state, exports, caches and machine configuration.
 .local/
+work/
+dist/
+build/
 exports/
 *.db
 *.db-wal
