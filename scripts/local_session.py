@@ -12,6 +12,7 @@ from mcp.client.stdio import stdio_client
 
 
 async def main() -> None:
+    sys.stdout.reconfigure(encoding="utf-8")
     root = Path(__file__).resolve().parents[1]
     parameters = StdioServerParameters(command=sys.executable, args=[str(root / "local_mcp.py")], cwd=str(root))
     async with stdio_client(parameters) as streams:

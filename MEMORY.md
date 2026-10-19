@@ -14,6 +14,9 @@
 
 - Completed: dependencies installed and pinned, 131 upstream/local tests passed, pip check and compile passed, actual MCP handshake passed, Codex registered as `netease-music-local`, and unrelated MCP entries preserved exactly.
 - Fixed two local integration issues: refresh persisted sessions before each call, and force the official challenge SDK to HTTPS on the HTTP loopback page. The latter was diagnosed from the official SDK's page-protocol default and the page's HTTPS-only CSP; a regression test failed before the fix and passed afterwards. Current served login HTML was checked for the explicit HTTPS option.
-- Private source repository created; source push is pending the final review.
-- Pending: human QR/security confirmation, real library read, recommendation selection and duplicate exclusion.
+- Private source repository created and pushed; remote visibility and branch contents verified. The GitHub connector cannot access this new private repository, so repository operations use the user's existing Git credential helper without printing credentials.
+- User skipped the renewed interactive login. Live account authentication remains incomplete.
+- The user's other assistant had produced an existing library export. Its recent 500 IDs were checked against the exact first 500 of the full 4,268-ID playlist, and all 4,268 metadata IDs were checked against the full ordered ID list. Personal exports remain outside this source repository.
+- Recommendation selection completed from that timestamped snapshot: 20 candidates checked against all liked IDs and exact title/artist matches, with all 20 separately reverified against public song metadata. No claim of audio review or new live account refresh.
+- A direct DSH headless consultation was attempted but did not obtain a model answer because its official API route lacked credentials. The other assistant's actual project scripts and non-secret exports supplied the verified reading-route evidence instead. A follow-up question is being left in the shared handoff.
 - Session DB, raw user library exports, logs, credentials, local configuration and backups must remain outside version control.
