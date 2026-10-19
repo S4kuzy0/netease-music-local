@@ -1,5 +1,7 @@
 # Rain's NetEase Music MCP
 
+Local stdio edition: see [LOCAL.md](LOCAL.md) for local QR login, complete liked-library reads, setup, verification, and data boundaries. Project continuity is maintained in [MEMORY.md](MEMORY.md).
+
 > 把平台给出的零散推荐，整理成真正属于一个人的每日聆听体验。
 
 An MCP server that connects ChatGPT and Codex to a NetEase Cloud Music account for music

@@ -25,3 +25,15 @@ logs/
 *.sqlite3-shm
 *.sqlite3-wal
 data/
+
+# Local login state, exports, caches and machine configuration.
+.local/
+exports/
+*.db
+*.db-wal
+*.db-shm
+*.[Aa][Gg][Ee][Nn][Tt][Ss].[Mm][Dd]
+[Aa][Gg][Ee][Nn][Tt].[Mm][Dd]
+[Aa][Gg][Ee][Nn][Tt][Ss].[Mm][Dd]
+[Aa][Gg][Ee][Nn][Tt].override.[Mm][Dd]
+[Aa][Gg][Ee][Nn][Tt][Ss].override.[Mm][Dd]

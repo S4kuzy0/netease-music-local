@@ -1423,7 +1423,7 @@ def _qr_login_page(login_id: str) -> str | None:
         "()=>typeof window.initNECaptcha==='function','yidun');if(stopped||current!==flowId)return;"
         "await new Promise((resolve,reject)=>{let settled=false;captchaTimer=setTimeout(()=>{"
         "if(!settled){settled=true;reject(challengeError('captcha_init_timeout','init_timeout'));}},30000);"
-        "window.initNECaptcha({captchaId:captchaId,element:'#captcha',mode:'popup',width:'320px',"
+        "window.initNECaptcha({captchaId:captchaId,element:'#captcha',mode:'popup',width:'320px',protocol:'https',"
         "onVerify:(error,data)=>{if(stopped||current!==flowId)return;"
         "const validate=!error&&data&&typeof data.validate==='string'?data.validate.trim():'';"
         "if(!validate){destroyCaptcha();statusNode.textContent='安全验证未完成';hintNode.textContent='可以重新开始安全验证。';"

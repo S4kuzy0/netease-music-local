@@ -211,6 +211,14 @@ class SessionManager:
     def storage_configured(self) -> bool:
         return self._store() is not None
 
+    def refresh_from_storage(self) -> None:
+        """Observe a login or logout persisted by another local MCP process."""
+        with self._lock:
+            store = self._store()
+            if store is not None:
+                self._runtime = store.load_netease_session()
+                self._loaded = True
+
     def current(self) -> dict[str, Any] | None:
         self._load()
         with self._lock:
